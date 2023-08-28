@@ -1,6 +1,5 @@
 import time
 
-import japanize_matplotlib  # noqa
 import matplotlib.pyplot as plt
 import streamlit as st
 import torch
@@ -114,6 +113,7 @@ def main():
                     k: v for k, v in result_dict.items() if v >= 0.03
                 }
 
+                plt.rcParams["font.family"] = "Noto Sans CJK JP"
                 fig, ax = plt.subplots()
                 wedgeprops = {"width": 0.3, "edgecolor": "white"}
                 textprops = {"fontsize": 12}
