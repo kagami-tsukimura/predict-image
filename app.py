@@ -63,14 +63,14 @@ def main():
     画面表示する処理。
     """
 
-    st.sidebar.title("画像認識アプリ")
-
-    st.sidebar.write("**ResNet**を使って何の画像かを判定します。")
-    st.sidebar.write("")
-
     SOURCE_DICT = {"upload": "画像をアップロード", "camera": "カメラで撮影"}
 
-    img_source = st.sidebar.radio("画像のソースを選択してください。", tuple(SOURCE_DICT.values()))
+    st.title("画像認識アプリ")
+
+    st.sidebar.title("**AI**が何の画像かを判定します。")
+    img_source = st.sidebar.radio("", tuple(SOURCE_DICT.values()))
+
+    st.subheader("サイドバーでモードを選択（アップロード/撮影）")
     if img_source == SOURCE_DICT["upload"]:
         img_file = st.file_uploader("画像を選択してください。", type=["png", "jpg"])
     elif img_source == SOURCE_DICT["camera"]:
